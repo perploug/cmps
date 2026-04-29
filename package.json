@@ -1,6 +1,6 @@
 {
   "name": "@stupidhorse/cmps",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Docker Compose launcher for Docker AI Sandboxes (SBX)",
   "bin": {
     "cmps": "./dist/index.js"
