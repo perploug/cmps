@@ -5,7 +5,7 @@ A CLI tool that launches Docker Compose files inside [Docker AI Sandboxes (SBX)]
 ## Install
 
 ```bash
-npm install -g cmps
+npm install -g @stupidhorse/cmps
 ```
 
 Or run locally from the repo:
@@ -13,6 +13,13 @@ Or run locally from the repo:
 ```bash
 npm run build
 node dist/index.js
+```
+
+or, link it
+
+```bash
+npm run build
+npm link
 ```
 
 ## Commands
@@ -111,14 +118,14 @@ export SANDBOX_NAME=my-sandbox  # or set permanently
 
 `cmps` determines the sandbox name by checking these sources in order:
 
-| Priority | Source |
-|----------|--------|
-| 1 | `--sandbox <name>` flag |
-| 2 | `SANDBOX_NAME` environment variable |
-| 3 | `SBX_SANDBOX_NAME` environment variable |
-| 4 | `SBX_NAME` environment variable |
-| 5 | Auto-detect via `sbx ls` (used if exactly one sandbox is running) |
-| 6 | Derived from workspace directory: `shell-<dirname>` |
+| Priority | Source                                                            |
+| -------- | ----------------------------------------------------------------- |
+| 1        | `--sandbox <name>` flag                                           |
+| 2        | `SANDBOX_NAME` environment variable                               |
+| 3        | `SBX_SANDBOX_NAME` environment variable                           |
+| 4        | `SBX_NAME` environment variable                                   |
+| 5        | Auto-detect via `sbx ls` (used if exactly one sandbox is running) |
+| 6        | Derived from workspace directory: `shell-<dirname>`               |
 
 ## Compose file discovery
 
